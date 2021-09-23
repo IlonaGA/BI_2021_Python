@@ -1,6 +1,6 @@
-ATGCU_dict={'A': 'T', 'a': 't', 'T': 'A', 't':'a', 'C': 'G', 'c':'g', 'G':'C', 'g':'c'}
+ATGCU_dict={'A': 'T', 'a': 't', 'T': 'A', 't':'a', 'C': 'G', 'c':'g', 'G':'C', 'g':'c', 'U':'A', 'u':'a'}
 alphabet = ['A', 'a', 'T', 't', 'G', 'g', 'C', 'c', 'U', 'u']
-valid_commands = ['transcribe', 'reverse', 'complement', 'reverse complement']
+valid_commands = ['transcribe', 'reverse', 'complement', 'reverse complement', 'exit']
 
 
 def valid_seq(seq):
@@ -78,5 +78,4 @@ while True:
         print (complement_seq[::-1])
 
 
-        
         
