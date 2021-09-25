@@ -6,7 +6,8 @@ units = [mass_units, info_units]
 
 scale_one = float(input('Введите численное значение величины '))
 unit_one = input('Введите единицу измерения введенной величины ')
-unit_two = input('Введите единицу измерения величины в которую хотите перевести ')
+unit_two = input('Введите единицу измерения величины в которую\
+                  хотите перевести ')
 is_correct_units = False
 
 for unit in units:
@@ -17,3 +18,4 @@ for unit in units:
 
 if not is_correct_units:
     print('Wrong units')
+
