@@ -1,5 +1,5 @@
 mass_units = {'Kg': 1, 'MyCat': 4.5, 'Sun': 1.989e30}
-info_units = {'B': 1, 'KB': 1e3, 'MB': 1e6, 'GB': 1e9}
+info_units = {'B': 1, 'KB': 2**10, 'MB': 2**20, 'GB': 2**30}
 
 units = [mass_units, info_units]
 
@@ -16,4 +16,4 @@ for unit in units:
         is_correct_units = True
 
 if not is_correct_units:
-    print('Wrong units')
+    print('Неправильные единицы измерения')
