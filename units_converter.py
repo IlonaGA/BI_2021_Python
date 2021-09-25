@@ -18,4 +18,3 @@ for unit in units:
 
 if not is_correct_units:
     print('Wrong units')
-
