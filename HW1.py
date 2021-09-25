@@ -1,7 +1,6 @@
-ATGCU_dict={'A': 'T', 'a': 't', 'T': 'A', 't':'a', 'C': 'G', 'c':'g', 'G':'C', 'g':'c'}
+ATGCU_dict={'A': 'T', 'a': 't', 'T': 'A', 't':'a', 'C': 'G', 'c':'g', 'G':'C', 'g':'c', 'U':'A', 'u':'a'}
 alphabet = ['A', 'a', 'T', 't', 'G', 'g', 'C', 'c', 'U', 'u']
-command = ''
-
+valid_commands = ['transcribe', 'reverse', 'complement', 'reverse complement', 'exit']
 
 
 def valid_seq(seq):
@@ -10,7 +9,7 @@ def valid_seq(seq):
         return False
            
     if 'T' in seq.upper() and 'U' in seq.upper():
-        print('T and U in the same sequence')
+        print('T and U in the same sequence ')
         return False
            
     return True
@@ -20,17 +19,34 @@ def get_valid_seq():
     while not valid_seq(seq):
         seq = input('Enter sequence ')
     return seq
-         
+
+
+def valid_command(command):
+    if not command in valid_commands:
+        print('Wrong command')
+        return False
+    return True
+
+def get_valid_command():
+    command = input('Enter command ')
+    while not valid_command(command):
+        command = input('Enter command ')
+    return command
+    
+    
+        
+    
     
 while True:
-    print('Enter command ')
-    command = input()
+    
+    command = get_valid_command()
     
     if command == 'exit':
         print('Bye')
         break
 
     seq = get_valid_seq()
+
 
     if command == 'transcribe':
         transcribe_seq = ''
@@ -61,8 +77,5 @@ while True:
             complement_seq += ATGCU_dict[seq[i]]
         print (complement_seq[::-1])
 
-            
-    else:
-        print('Wrong command')
 
         
