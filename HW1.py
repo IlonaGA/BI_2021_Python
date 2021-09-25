@@ -51,7 +51,7 @@ while True:
         complement_seq = ''
         for i in range(len(seq)):
             complement_seq += ATGCU_dict[seq[i]]
-        print (complement_seq)
+        print(complement_seq)
 
     elif command == 'reverse complement':
         complement_seq = ''
