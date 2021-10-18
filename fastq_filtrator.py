@@ -42,13 +42,13 @@ def main(input_fastq, output_file_prefix, gc_bounds=(0, 100),
         file.append(line)
 
     for i in range(0, len(file), 4):
-        if check_gc_bounds(file[i + 1], 
-                           gc_bounds[0], 
+        if check_gc_bounds(file[i + 1],
+                           gc_bounds[0],
                            gc_bounds[1]) and \
-            check_length_bounds(file[i + 1], 
-                                length_bounds[0], 
+            check_length_bounds(file[i + 1],
+                                length_bounds[0],
                                 length_bounds[1]) and \
-            check_quality_threshold(file[i + 1], 
+            check_quality_threshold(file[i + 1],
                                     quality_threshold):
 
             passed.write(file[i])
