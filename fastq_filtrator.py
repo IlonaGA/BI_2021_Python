@@ -63,4 +63,3 @@ def main(input_fastq, output_file_prefix, gc_bounds=(0, 100),
                 failed.write(file[i + 1] + '\n')
                 failed.write(file[i + 2] + '\n')
                 failed.write(file[i + 3] + '\n')
-
