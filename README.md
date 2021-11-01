@@ -17,5 +17,5 @@ pip install scanpy
 pip install opencv-python
 pip3 install lxml
 
-pip freeze > requirements.txt
+pip freeze > requirements.txt  
 python pain.py
