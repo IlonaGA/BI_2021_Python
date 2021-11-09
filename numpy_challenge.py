@@ -1,6 +1,7 @@
 # %%
 import numpy as np
 
+
 def task_1(n):
     # Solution 1
 
@@ -34,6 +35,7 @@ def task_1(n):
     arr = vecf(arr)
     print(arr)
 
+
 def matrix_multiplication(a, b):
     a = np.asarray(a)
     b = np.asarray(b)
@@ -54,6 +56,7 @@ def multiplication_check(list_mat):
 
     return True
 
+
 def multiply_matrices(list_mat):
     list_mat = [np.asarray(a) for a in list_mat] 
 
@@ -67,17 +70,20 @@ def multiply_matrices(list_mat):
 
     return ans
 
+
 def compute_2d_distance(a, b):
     a = np.asarray(a)
     b = np.asarray(b)
 
     return np.sqrt((a - b) @ (a - b))
 
+
 def compute_multidimensional_distance(a, b):
     a = np.asarray(a)
     b = np.asarray(b)
 
     return np.sqrt((a - b) @ (a - b))
+
 
 def compute_pair_distances(X):
     X = np.asarray(X)
@@ -90,6 +96,7 @@ def compute_pair_distances(X):
             dist[j][i] = dist[i][j]
 
     return dict
+
 
 # %%
 if __name__ == '__main__':
