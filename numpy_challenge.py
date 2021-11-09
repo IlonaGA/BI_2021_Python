@@ -44,7 +44,7 @@ def matrix_multiplication(a, b):
 
 
 def multiplication_check(list_mat):
-    list_mat = [np.asarray(a) for a in list_mat] 
+    list_mat = [np.asarray(a) for a in list_mat]
 
     m, n = list_mat[0].shape
 
@@ -58,7 +58,7 @@ def multiplication_check(list_mat):
 
 
 def multiply_matrices(list_mat):
-    list_mat = [np.asarray(a) for a in list_mat] 
+    list_mat = [np.asarray(a) for a in list_mat]
 
     ans = list_mat[0]
 
