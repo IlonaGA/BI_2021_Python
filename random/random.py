@@ -24,9 +24,9 @@ numpy_shape_time = []
 lengths = [i * 10 for i in range(1, 100)]
 
 for length in lengths:
-    random_time.append(count_time(lambda: [random.random() \
+    random_time.append(count_time(lambda: [random.random() 
         for i in range(length)], 100))
-    numpy_time.append(count_time(lambda: [np.random.random() \
+    numpy_time.append(count_time(lambda: [np.random.random() 
         for i in range(length)], 100))
     numpy_shape_time.append(count_time(lambda: np.random.random(length), 100))
 
@@ -37,8 +37,8 @@ plt.plot(lengths, numpy_shape_time, label='numpy_shape')
 plt.legend()
 plt.show()
 
-# %% task 2
 
+# %% task 2
 def is_sorted(arr):
     return np.all(arr[:-1] < arr[1:])
 
@@ -107,8 +107,9 @@ plt.scatter(points[:, 0], points[:, 1], s=0.1)
 plt.show()
 
 # %% task 5
-
 text = input()
+
+
 def random_word_permut(word):
     mid = np.array([letter for letter in word[1: -1]])
     mid = mid[np.random.permutation(len(mid))]
