@@ -1,4 +1,4 @@
-#%%
+# %%
 import numpy as np
 import random
 from time import time
@@ -7,7 +7,7 @@ import seaborn as sns
 import pandas as pd
 
 
-#%% prepare
+# %% prepare
 def count_time(func, n):
     start = time()
     for i in range(n):
@@ -24,11 +24,13 @@ numpy_shape_time = []
 lengths = [i * 10 for i in range(1, 100)]
 
 for length in lengths:
-    random_time.append(count_time(lambda: [random.random() for i in range(length)], 100))
-    numpy_time.append(count_time(lambda: [np.random.random() for i in range(length)], 100))
+    random_time.append(count_time(lambda: [random.random() \
+        for i in range(length)], 100))
+    numpy_time.append(count_time(lambda: [np.random.random() \
+        for i in range(length)], 100))
     numpy_shape_time.append(count_time(lambda: np.random.random(length), 100))
 
-#%%
+# %%
 plt.plot(lengths, random_time, label='random')
 plt.plot(lengths, numpy_time, label='numpy')
 plt.plot(lengths, numpy_shape_time, label='numpy_shape')
@@ -39,6 +41,7 @@ plt.show()
 
 def is_sorted(arr):
     return np.all(arr[:-1] < arr[1:])
+
 
 def monkey_sort(arr):
     while not is_sorted(arr):
@@ -56,11 +59,12 @@ for length in [1, 3, 6, 9]:
 df = pd.DataFrame(df)
 df.head()
 
+
 # %%
 sns.boxplot(data=df, x='length', y='time')
 plt.show()
 
-#%% task 3
+# %% task 3
 # Я очень люблю функцию cumsum
 # Мне очень понравилось такое решение
 
@@ -112,4 +116,3 @@ def random_word_permut(word):
     return word[0] + ''.join(mid) + word[-1]
 
 print(' '.join(map(random_word_permut, text.split())))
-
