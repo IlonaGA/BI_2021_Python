@@ -24,10 +24,12 @@ numpy_shape_time = []
 lengths = [i * 10 for i in range(1, 100)]
 
 for length in lengths:
-    random_time.append(count_time(lambda: [random.random() 
-        for i in range(length)], 100))
-    numpy_time.append(count_time(lambda: [np.random.random() 
-        for i in range(length)], 100))
+    random_time.append(count_time(lambda: [random.random()
+                                           for i in range(length)], 100))
+
+    numpy_time.append(count_time(lambda: [np.random.random()
+                                          for i in range(length)], 100))
+
     numpy_shape_time.append(count_time(lambda: np.random.random(length), 100))
 
 # %%
@@ -37,8 +39,9 @@ plt.plot(lengths, numpy_shape_time, label='numpy_shape')
 plt.legend()
 plt.show()
 
-
 # %% task 2
+
+
 def is_sorted(arr):
     return np.all(arr[:-1] < arr[1:])
 
@@ -47,6 +50,8 @@ def monkey_sort(arr):
     while not is_sorted(arr):
         permut = np.random.permutation(len(arr))
         arr = arr[permut]
+
+
 df = {'time': [], 'length': []}
 for length in [1, 3, 6, 9]:
     print(length)
@@ -58,7 +63,6 @@ for length in [1, 3, 6, 9]:
 
 df = pd.DataFrame(df)
 df.head()
-
 
 # %%
 sns.boxplot(data=df, x='length', y='time')
@@ -107,6 +111,7 @@ plt.scatter(points[:, 0], points[:, 1], s=0.1)
 plt.show()
 
 # %% task 5
+
 text = input()
 
 
@@ -115,5 +120,6 @@ def random_word_permut(word):
     mid = mid[np.random.permutation(len(mid))]
 
     return word[0] + ''.join(mid) + word[-1]
+
 
 print(' '.join(map(random_word_permut, text.split())))
