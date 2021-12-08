@@ -7,7 +7,7 @@ import seaborn as sns
 import pandas as pd
 
 
-# %% prepare
+# %% preparation
 def count_time(func, n):
     start = time()
     for i in range(n):
