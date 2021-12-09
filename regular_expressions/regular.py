@@ -49,7 +49,7 @@ with open('2430AD.txt', 'r') as read:
     for line in read:
 
         words = re.findall('[a-zA-Z]+', line)
-        
+
         if len(words) == 0:
             continue
 
