@@ -1,17 +1,17 @@
-#%%
+# %%
 import re
 import matplotlib.pyplot as plt
 
-#%%
+# %%
 with open('references.txt', 'r') as read, open('ftps.txt', 'w') as write:
     for line in read:
         m = re.findall('[\\.a-zA-Z0-9]+/[\\./a-zA-Z0-9_#]+', line)
         if len(m) == 0:
             continue
-        
+
         for href in m:
             write.write(href + '\n')
-        
+
 # %%
 with open('2430AD.txt', 'r') as read, open('numbers.txt', 'w') as write:
     for line in read:
@@ -23,7 +23,8 @@ with open('2430AD.txt', 'r') as read, open('numbers.txt', 'w') as write:
             write.write(num + '\n')
 
 # %%
-with open('2430AD.txt', 'r') as read, open('Awords.txt', 'w') as write:
+with open('2430AD.txt', 'r') as read,
+     open('Awords.txt', 'w') as write:
     for line in read:
         m = re.findall('([a-zA-Z]*[a|A]+[a-zA-Z]*)', line)
         if len(m) == 0:
