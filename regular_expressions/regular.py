@@ -23,8 +23,7 @@ with open('2430AD.txt', 'r') as read, open('numbers.txt', 'w') as write:
             write.write(num + '\n')
 
 # %%
-with open('2430AD.txt', 'r') as read,
-     open('Awords.txt', 'w') as write:
+with open('2430AD.txt', 'r') as read, open('Awords.txt', 'w') as write:
     for line in read:
         m = re.findall('([a-zA-Z]*[a|A]+[a-zA-Z]*)', line)
         if len(m) == 0:
@@ -32,9 +31,10 @@ with open('2430AD.txt', 'r') as read,
 
         for num in m:
             write.write(num + '\n')
-        
+
 # %%
-with open('2430AD.txt', 'r') as read, open('sentence_emotional.txt', 'w') as write:
+with open('2430AD.txt', 'r') as read,\
+     open('sentence_emotional.txt', 'w') as write:
     for line in read:
         m = re.findall('[.|!|?]*([a-zA-Z0-9]+!)', line)
         if len(m) == 0:
@@ -49,7 +49,7 @@ with open('2430AD.txt', 'r') as read:
     for line in read:
 
         words = re.findall('[a-zA-Z]+', line)
-        
+
         if len(words) == 0:
             continue
 
