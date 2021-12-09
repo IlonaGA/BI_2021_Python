@@ -31,7 +31,7 @@ with open('2430AD.txt', 'r') as read, open('Awords.txt', 'w') as write:
 
         for num in m:
             write.write(num + '\n')
-        
+
 # %%
 with open('2430AD.txt', 'r') as read,\
      open('sentence_emotional.txt', 'w') as write:
