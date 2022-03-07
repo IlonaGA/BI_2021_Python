@@ -52,8 +52,6 @@ def get_user_info(user_name):
             'followers': followers,
             'repositories': repositories}
 
-get_user_info('IlonaGA')
-
 # %%
 
 
@@ -62,11 +60,10 @@ def get_user_repositories(username):
     soup = bs(req.content)
 
     class_name = 'col-12 d-flex width-full'
-    class_name += 'py-4 border-bottom color-border-muted public source'
+    class_name += ' py-4 border-bottom color-border-muted public source'
     repositories = soup.find_all(class_=class_name)
     ans = []
     for counter, rep in enumerate(repositories):
-        print(counter)
         item = {}
         item['user'] = username
         try:
@@ -84,9 +81,8 @@ def get_user_repositories(username):
             item['language'] = 'None'
         ans.append(item.copy())
 
+    print(counter)
     return ans
-
-get_user_repositories('IlonaGA')
 
 # %%
 
@@ -98,4 +94,10 @@ def download_file(username, repository, remote_file_path, local_file_path):
 
     save_content(req, local_file_path)
 
-download_file('IlonaGA', 'MyFirstDash', 'dashapp.py', 'my_dashapp.py')
+if __name__ == '__main__':
+
+    print('example get_user', get_user_info('IlonaGA'))
+    print('example get repositories', get_user_repositories('IlonaGA'))
+    print('example dowload file',
+          download_file('IlonaGA', 'MyFirstDash',
+                        'dashapp.py', 'my_dashapp.py'))
