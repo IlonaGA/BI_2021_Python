@@ -11,6 +11,7 @@ def fasta_gen(path):
             if line[0] == '>':
                 if sequence != '':
                     yield name, sequence
+                    sequence = ''
 
                 name = line[1:-1]
             else:
