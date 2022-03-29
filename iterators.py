@@ -1,10 +1,10 @@
 # %%
-from tkinter.messagebox import NO
+import numpy as np
 
 
 def fasta_gen(path):
     with open(path) as fasta:
-        
+
         name = ''
         sequence = ''
         for line in fasta:
@@ -22,11 +22,14 @@ for name, seq in fasta_gen('sequences-2.fasta'):
 
 
 # %%
-import numpy as np
 
 
 class RandomSeq:
-    def __init__(self, path, probs={'replace': 0.1, 'delition': 0.1, 'insertion': 0.1, 'gap': 0.1}):
+    def __init__(self, path,
+                 probs={'replace': 0.1,
+                        'delition': 0.1,
+                        'insertion': 0.1,
+                        'gap': 0.1}):
         self.path = path
         self.probs = probs.copy()
 
@@ -68,12 +71,13 @@ for i, line in enumerate(my_seq_gen):
 
 # %%
 
+
 def iter_append(iterable, item):
     return iter((*iterable, item))
 
 for i in iter_append([1, 2, 3], 'ABACABA'):
     print(i)
-    
+
 
 # %%
 
