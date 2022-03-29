@@ -17,6 +17,7 @@ def fasta_gen(path):
                 sequence += line[:-1]
         yield name, sequence
 
+
 for name, seq in fasta_gen('sequences-2.fasta'):
     print(name, seq[:10])
 
@@ -75,6 +76,7 @@ for i, line in enumerate(my_seq_gen):
 def iter_append(iterable, item):
     return iter((*iterable, item))
 
+
 for i in iter_append([1, 2, 3], 'ABACABA'):
     print(i)
 
@@ -93,5 +95,5 @@ def nested_list_unpacker(x):
     except TypeError:
         return [x]
 
-nested_list_unpacker([1, [2], [[3]], [], [4, 5, [6]], [7, [8, [9]]]])
 
+nested_list_unpacker([1, [2], [[3]], [], [4, 5, [6]], [7, [8, [9]]]])
