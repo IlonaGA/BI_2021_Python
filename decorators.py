@@ -18,6 +18,7 @@ def test_time_measure(sleep, msg='I love functional programming'):
     print(msg)
     time.sleep(sleep)
 
+
 print(test_time_measure(5, msg='Does printing takes musch time?'))
 
 # %%
@@ -40,7 +41,7 @@ def my_logger(func):
 
         ans = func(*args, **kwargs)
         print(f'function {func.__name__} ' +
-               'returns output of type {type(ans).__name__}')
+              'returns output of type {type(ans).__name__}')
         return ans
     return inner_func
 
@@ -48,6 +49,7 @@ def my_logger(func):
 @my_logger
 def test_logger(a, b, c, d):
     return {a: b, c: d}
+
 
 print(test_logger(1, 2, c='3', d='4'))
 
@@ -69,6 +71,7 @@ def roulette(prob=0, value='Alive'):
 @roulette(prob=1/6, value='Dead')
 def test_roulette(msg):
     return msg
+
 
 for i in range(10):
     print(test_roulette(i))
